@@ -13,7 +13,7 @@ app.use(express.json());
 
 //connecting to mlab using mongooes
 const uri = process.env.ATLAS_URI;
-mongoes.connect(uri,{useNewUrlParser: true, userCreateIndex: true });
+mongoes.connect(uri, {useNewUrlParser: true, userCreateIndex: true });
 const connection = mongooes.connection;
 connection.once('open', () => {
     console.log("MongoDB Database Connection was established");
