@@ -2,6 +2,8 @@ const express = require('express');
 //const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongooes = require('mongoose');
+const uersRoute = require('./routes/users');
+const exercisesRoute = require('./routes/exercises');
 
 require('dotenv').config();
 
@@ -19,7 +21,8 @@ connection.once('open', () => {
     console.log("MongoDB Database Connection was established");
 }) ;
 
-
+app.use('/users', uersRoute);
+app.use('/exercise', exercisesRoute);
 
 
 //listing port
