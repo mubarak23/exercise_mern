@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../model/userModel');
+let User = require('../model/userModel');
 
 //get route for users
 router.route('/')
@@ -15,3 +15,5 @@ router.route('/add_user')
     newUser.save().then(() => req.status(200).json('New User Added'))
     .catch((err) => res.status(401).json(`error: ${err}`));
 });
+
+module.exports = router;
