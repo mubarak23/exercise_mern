@@ -12,18 +12,22 @@ router.route('/')
 
 router.route('/add_exercise')
 .post((req, res) =>{
+    
     const username = req.body.username;
     const description = req.body.description;
     const duration = req.body.duration;
     const date = Date.parse(req.body.date);
 
     const newExercise = new Exercise({
-        username,
-        description,
-        duration,
-        date
+        username: username,
+        description: description,
+        duration: duration,
+        date: date
     });
-    newExercise.save().then(() => res.status(200).json('Exercise Added'))
+    newExercise.save().then(() => res.status(200).json({
+        'message': 'Exercise Added',
+        'data': newExercise,
+    }))
     .catch((error) => res.status(401).json(`Error: ${error}`));
 });
 
@@ -48,7 +52,10 @@ router.route('/update/:id')
         exercise.duration = req.body.duration;
         exercise.date = Date.parse(req.body.date);
         exercise.save()
-        .then(() =>res.status(200),json('Exercise Updated'))
+        .then(() =>res.status(200).json({
+            "message": 'Exercise Updated',
+            "data": exercise,
+        }))
         .catch(error => res.status(402).json(`Error: ${error}`));
     })
     .catch(error => res.status(402).json(`Error: ${error}`));
