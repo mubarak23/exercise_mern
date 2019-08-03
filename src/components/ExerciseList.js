@@ -1,13 +1,14 @@
 import React from 'react';
 //import { Link } from 'react-router-dom';
 
-function ExerciseList (){
-    return(
-        <div>
-            Welcome the exercise list
-            
-        </div>
-    )
+class ExerciseList extends React.Component{
+    render(){
+        return(
+            <div>
+                List of Exercise Component;
+            </div>
+        )
+    }
 }
 
 export default ExerciseList;

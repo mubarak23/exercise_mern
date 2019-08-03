@@ -18,7 +18,7 @@ function MainNavbar (){
                         </li>
                         <li></li>
                         <li class="navbar-item">
-                            <Link to="/createUser" className="navbar-link">Create User</Link>
+                            <Link to="/createuser" className="navbar-link">Create User</Link>
                         </li>
                     </ul>
                 </div>
