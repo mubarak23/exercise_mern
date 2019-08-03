@@ -10,14 +10,14 @@ function MainNavbar (){
                 <div className="collapse navbar-collapse">
                     <ul className="navbar-nav mr-auto">
                         <li></li>
-                        <li class="navbar-item">
+                        <li className="navbar-item">
                             <Link to="/" className="navbar-link">Exercises</Link>
                         </li>
-                        <li class="navbar-item">
+                        <li className="navbar-item">
                             <Link to="/createxercise" className="navbar-link">Create Exercises</Link>
                         </li>
                         <li></li>
-                        <li class="navbar-item">
+                        <li className="navbar-item">
                             <Link to="/createuser" className="navbar-link">Create User</Link>
                         </li>
                     </ul>
