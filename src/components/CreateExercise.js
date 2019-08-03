@@ -9,7 +9,7 @@ class CreateExercise extends React.Component{
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
-        this.onChangeUsername = this.onChangeUsername.bind(this);
+        this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -89,7 +89,7 @@ class CreateExercise extends React.Component{
                         <input type="text" 
                         required
                         className="form-control"
-                        value={this.description}
+                        value={this.state.description}
                         onChange = {this.onChangeDescription} />   
                     </div>
                     <div className="form-group">
@@ -97,7 +97,7 @@ class CreateExercise extends React.Component{
                         <input type="text" 
                         required
                         className="form-control"
-                        value={this.duration}
+                        value={this.state.duration}
                         onChange = {this.onChangeDuration} />   
                     </div>
                     <div className="form-group">
