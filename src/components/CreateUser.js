@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 //import { Link } from 'react-router-dom';
 
 class CreateUser extends React.Component{
@@ -11,13 +12,19 @@ class CreateUser extends React.Component{
             username: ''
         }
 
-    }    
+    }
+    
+     headers = {
+        'Content-Type': 'application/json',
+      }
 
     onChangeUsername = (e) =>{
         this.setState({
             username: e.target.value
         });
     }
+    
+    
 
     onSubmit = (e) =>{
     e.preventDefault();
@@ -28,6 +35,9 @@ class CreateUser extends React.Component{
        this.setState({
            username: ''
        });
+       
+       axios.post('http://localhost:5000/users/add_user', user)
+       .then(res => console.log(res.data));
 
        console.log(user);
    } 
